@@ -1,0 +1,16 @@
+/dist
+/node_modules
+
+.env
+.env.backup
+.*.env
+.*.env.backup
+.cache
+.DS_Store
+.storybook
+.vscode
+
+__pycache__
+
+npm-debug.log
+yarn-error.log

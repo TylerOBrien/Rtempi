@@ -1,0 +1,17 @@
+/**
+ * Tailwind
+*/
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/**
+ * Setup
+*/
+
+html, body, .react-app {
+  height: 100%;
+}

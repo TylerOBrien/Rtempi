@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/",
+		"target": "es2017",
+		"lib": ["es2015", "es2016", "es2017", "es6", "es7", "es5", "dom"],
+    "jsx": "react",
+    "esModuleInterop": true,
+		"moduleResolution": "node",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "allowJs": true,
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}
