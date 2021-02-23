@@ -2,7 +2,7 @@
  * Global Imports
 */
 
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 /**
@@ -11,7 +11,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { View } from '~/components/Base';
 import { UserGuard } from '~/components/Guard';
-
 import {
   ApiProvider,
   AuthProvider,
@@ -19,19 +18,19 @@ import {
   UserProvider } from '~/providers';
 
 /**
- * Locals
+ * Types/Interfaces
 */
 
-function EntryPointMain() {
-  return (
-    <UserGuard
-      loading={ null }
-      guest={ null }
-      unidentified={ null }
-      identified={ null }
-    />
-  );
+export interface EntryPointProps {
+  LoadingRouter: FunctionComponent;
+  GuestRouter: FunctionComponent;
+  UnidentifiedRouter: FunctionComponent;
+  IdentifiedRouter: FunctionComponent;
 }
+
+/**
+ * Locals
+*/
 
 function EntryPointOverlay() {
   return (
@@ -45,14 +44,19 @@ function EntryPointOverlay() {
  * Exports
 */
 
-export function EntryPoint() {
+export function EntryPoint(props:EntryPointProps) {
   return (
     <AuthProvider>
       <UserProvider>
         <ApiProvider>
           <FormProvider>
             <BrowserRouter>
-              <EntryPointMain />
+              <UserGuard
+                loading={ props.LoadingRouter }
+                guest={ props.GuestRouter }
+                unidentified={ props.UnidentifiedRouter }
+                identified={ props.IdentifiedRouter }
+              />
             </BrowserRouter>
             <EntryPointOverlay />
           </FormProvider>
