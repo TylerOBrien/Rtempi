@@ -23,7 +23,7 @@ import { UserRouter } from './UserRouter';
  * Exports
 */
 
-export function RootRouter() {
+export function IdentifiedRouter() {
   return (
     <Switch>
       <Route path='/' exact component={ DashboardRouter } />

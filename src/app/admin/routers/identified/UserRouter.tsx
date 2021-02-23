@@ -14,8 +14,8 @@ import {
   CreateUser,
   IndexUser,
   ShowUser,
-  TwoFactorAuth,
-  UserRecovery } from '~/app/admin/screens/identified/User';
+  ShowUser as TwoFactorAuth,
+  ShowUser as UserRecovery } from '~/app/admin/screens/identified/User';
 
 /**
  * Types/Interfaces
