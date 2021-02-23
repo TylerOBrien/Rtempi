@@ -97,11 +97,11 @@ function random(length:number = 16) : string {
   let noise = '';
 
   while (noise.length < length) {
-    const remaining = (length - noise.length);
+    const remaining = ( length - noise.length );
     const bytes = window.crypto.getRandomValues(new Uint8Array(remaining));
     const encoded = base64(bytes);
 
-    noise = (noise + encoded.replace(/[/+=]+/g, '').substr(0, remaining));
+    noise = ( noise + encoded.replace(/[/+=]+/g, '').substr(0, remaining) );
   }
 
   return noise;
