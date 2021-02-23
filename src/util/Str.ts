@@ -69,6 +69,37 @@ function ucfirst(word:string):string {
 }
 
 /**
+ * Check if the string matches the given pattern via a regex test operation. An
+ * asterisk can be used as a wildcard.
+ * 
+ * @param {string} source
+ * @param {string | Array<string>} pattern
+ * 
+ * @return {boolean}
+ */
+function matches(source:string, pattern:string | Array<string>) : boolean {
+  if (!pattern.length) {
+    return !source.length;
+  } else if (typeof pattern === 'string') {
+    pattern = [ pattern ];
+  }
+
+  for (const item of pattern) {
+    if (item === source) {
+      continue;
+    }
+
+    const expr = new RegExp('^' + item.replace(/\*/g, '.*') + '$');
+
+    if (!expr.test(source)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+/**
  * Checks if the given needle exists within the string.
  * 
  * @param {string} string
@@ -133,4 +164,4 @@ function random(length:number = 16) : string {
  * Exports
 */
 
-export const Str = { singular, plural, lcfirst, ucfirst, contains, base64, random };
+export const Str = { singular, plural, lcfirst, ucfirst, matches, contains, base64, random };
