@@ -2,7 +2,7 @@
  * Global Imports
 */
 
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { Fragment, FunctionComponent, ReactNode } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 
 /**
@@ -22,9 +22,13 @@ export interface RouteOptions<RouteParams> {
   component: RouteComponent<RouteParams>;
 }
 
-export interface RouterProps<RouteParams> {
-  routes: Array<RouteOptions<RouteParams>>;
-  container: FunctionComponent;
+export interface RouterContainerProps {
+  children: ReactNode;
+}
+
+export interface RouterProps {
+  routes: Array<RouteOptions<unknown>>;
+  container: FunctionComponent<RouterContainerProps>;
 }
 
 /**
@@ -39,7 +43,8 @@ function HigherOrderRoute<RouteParams>({ component, ...options }:RouteOptions<Ro
  * Exported Components
 */
 
-export function Router<RouteParams>(props:RouterProps<RouteParams>) {
+
+export function Router(props:RouterProps) {
   /** Hooks **/
 
   const match = useRouteMatch();
