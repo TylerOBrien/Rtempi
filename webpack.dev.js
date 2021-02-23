@@ -24,8 +24,7 @@ module.exports = merge(common, {
     compress: true,
     contentBase: './dist',
     allowedHosts: [
-      process.env.ADMIN_DOMAIN,
-      process.env.USER_DOMAIN
+      process.env[process.env.APP_DOMAIN.toUpperCase() + '_DOMAIN']
     ]
   },
 

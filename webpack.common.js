@@ -10,7 +10,7 @@ const path = require('path');
 
 module.exports = {
   entry: [
-    './index.ts',
+    `./${ process.env.APP_DOMAIN }/index.ts`,
     './resources/sass/app.scss'
   ],
 
