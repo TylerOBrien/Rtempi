@@ -122,6 +122,22 @@ function contains(haystack:string, needle:string | Array<string>) : boolean {
 }
 
 /**
+ * 
+ * 
+ * @param {string} source
+ * @param {number} maxLength
+ * @param {string} ending
+ * 
+ * @return {source}
+ */
+function limit(source:string, maxLength:number = 100, ending:string = '…') : string {
+  return source.length > maxLength
+    ? source.substr(0, maxLength) + ending
+    : source;
+}
+
+
+/**
  * Encode an array using base64.
  * 
  * @param {Int8Array | Uint8Array | Array<string>} unencoded
@@ -164,4 +180,4 @@ function random(length:number = 16) : string {
  * Exports
 */
 
-export const Str = { singular, plural, lcfirst, ucfirst, matches, contains, base64, random };
+export const Str = { singular, plural, lcfirst, ucfirst, matches, contains, limit, base64, random };
