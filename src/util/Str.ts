@@ -3,12 +3,12 @@
 */
 
 /**
- * Assumes the passed word param is a single word and converts it to a singular
- * form if it is not already singular.
  * 
- * @param {string} word
  * 
- * @return {string}
+ * @param {string} haystack
+ * @param {string | Array<string>} needle 
+ * 
+ * @return {number}
  */
 function count(haystack:string, needle:string | Array<string>) : number {
   if (!needle.length) {
