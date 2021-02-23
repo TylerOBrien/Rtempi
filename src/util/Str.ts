@@ -69,6 +69,28 @@ function ucfirst(word:string):string {
 }
 
 /**
+ * Checks if the given needle exists within the string.
+ * 
+ * @param {string} string
+ * @param {string | Array<string>} needle
+ * 
+ * @return {boolean}
+ */
+function contains(haystack:string, needle:string | Array<string>) : boolean {
+  if (typeof needle === 'string') {
+    return haystack.indexOf(needle) !== -1;
+  }
+
+  for (const item of needle) {
+    if (haystack.indexOf(item) !== -1) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+/**
  * Encode an array using base64.
  * 
  * @param {Int8Array | Uint8Array | Array<string>} unencoded
@@ -111,4 +133,4 @@ function random(length:number = 16) : string {
  * Exports
 */
 
-export const Str = { singular, plural, lcfirst, ucfirst, base64, random };
+export const Str = { singular, plural, lcfirst, ucfirst, contains, base64, random };
