@@ -33,7 +33,7 @@ export interface IndexUserProps extends RouteProps<IndexUserRouteParams> {
  * Components
 */
 
-export function IndexUsers(props:IndexUserProps) {
+export function IndexUser(props:IndexUserProps) {
   /** Contexts **/
   
   /** States **/
