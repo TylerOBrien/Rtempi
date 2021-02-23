@@ -14,15 +14,19 @@ import { SetStateHandler } from '~/util/React';
  * Types/Interfaces
 */
 
+export interface Breadcrumb {
+  //
+}
+
 export interface ScreenProviderProps {
   children: ReactNode;
 }
 
 export interface ScreenContextInterface {
   title: string;
-  breadcrumbs: Array<any>;
+  breadcrumbs: Array<Breadcrumb>;
   setTitle: SetStateHandler<string>;
-  setBreadcrumbs: SetStateHandler<Array<any>>;
+  setBreadcrumbs: SetStateHandler<Array<Breadcrumb>>;
 }
 
 /**
@@ -39,7 +43,7 @@ export function ScreenProvider(props:ScreenProviderProps) {
   /** States **/
 
   const [ title, setTitle ] = useState<string>();
-  const [ breadcrumbs, setBreadcrumbs ] = useState<Array<any>>();
+  const [ breadcrumbs, setBreadcrumbs ] = useState<Array<Breadcrumb>>();
 
   /** Output **/
 
