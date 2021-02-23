@@ -46,16 +46,16 @@ export function truthies<In=unknown, Out=In>(items:Array<In>):Array<Out> {
  *     }
  * };
  * 
- * within(source, 'foo'); // 42
- * within(source, 'bar.message'); // 'hello'
- * within(source, 'bar.baz.data'); // 'testing 123'
+ * pluck(source, 'foo'); // 42
+ * pluck(source, 'bar.message'); // 'hello'
+ * pluck(source, 'bar.baz.data'); // 'testing 123'
  * 
  * @param {InTy} source
  * @param {string} key
  * 
  * @return {OutTy}
  */
-export function within<InTy, OutTy=unknown>(source:InTy, key:string):OutTy {
+export function pluck<InTy, OutTy=unknown>(source:InTy, key:string):OutTy {
   const parts = key.split('.');
   const end = parts.length;
   
@@ -160,4 +160,4 @@ export function excepted<InTy=object, OutTy=InTy>(source:InTy, except:object | A
  * Namespaced Exports
 */
 
-export const Algorithm = { truthies, within, expand, condense, excepted };
+export const Algorithm = { truthies, pluck, expand, condense, excepted };
