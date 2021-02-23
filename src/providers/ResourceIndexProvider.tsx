@@ -30,41 +30,41 @@ export interface SearchOptions {
   attributes: Array<string>;
 }
 
-export interface ResourceIndexProviderProps {
-  context: Context<any>;
-  children: ReactNode;
-}
-
-export interface ResourceIndexContextInterface<T=unknown> {
+export interface ResourceIndexContextInterface<ResourceInterface> {
   viewing: number;
-  resources: Array<T>;
+  resources: Array<ResourceInterface>;
   indices: Array<number>;
   paginate: PaginateOptions;
   sort: SortOptions;
   search: SearchOptions;
 
   setViewing: SetStateHandler<number>;
-  setResources: SetStateHandler<Array<T>>;
+  setResources: SetStateHandler<Array<ResourceInterface>>;
   setIndices: SetStateHandler<Array<number>>;
   setPagination: SetStateHandler<PaginateOptions>;
   setSort: SetStateHandler<SortOptions>;
   setSearch: SetStateHandler<SearchOptions>;
 }
 
+export interface ResourceIndexProviderProps<ResourceInterface> {
+  context: Context<ResourceIndexContextInterface<ResourceInterface>>;
+  children: ReactNode;
+}
+
 /**
  * Components
 */
 
-export function ResourceIndexProvider<T>(props:ResourceIndexProviderProps) {
+export function ResourceIndexProvider<ResourceInterface>(props:ResourceIndexProviderProps<ResourceInterface>) {
   /** States **/
 
   const [ viewing,    setViewing ]    = useState<number>();
-  const [ resources,  setResources ]  = useState<Array<T>>();
+  const [ resources,  setResources ]  = useState<Array<ResourceInterface>>();
   const [ indices,    setIndices ]    = useState<Array<number>>();
   const [ paginate,   setPagination ] = useState<PaginateOptions>();
   const [ sort,       setSort ]       = useState<SortOptions>();
   const [ search,     setSearch ]     = useState<SearchOptions>();
-  
+
   /** Output **/
   
   return (
