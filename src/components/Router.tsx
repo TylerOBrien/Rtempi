@@ -18,6 +18,7 @@ export type RouteComponent<RouteParams> = FunctionComponent<RouteProps<RoutePara
 
 export interface RouteOptions<RouteParams> {
   path: string;
+  group: string;
   component: RouteComponent<RouteParams>;
 }
 
