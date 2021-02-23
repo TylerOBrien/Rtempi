@@ -51,7 +51,7 @@ module.exports = merge(common, {
       chunkFilename: '[id].[contenthash].css'
     }),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './staging/index.html',
       filename: 'index.html'
     })
   ]
