@@ -2,6 +2,8 @@
  * Global Imports
 */
 
+require('dotenv').config();
+
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const path = require('path');
@@ -17,6 +19,8 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
 
   devServer: {
+    host: process.env.DEV_SERVER_HOST || '127.0.0.1',
+    port: process.env.DEV_SERVER_PORT || 8080,
     compress: true,
     disableHostCheck: true,
     contentBase: './dist'

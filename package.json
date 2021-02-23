@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "watch": "cross-env NODE_ENV=development webpack watch --progress --config webpack.dev.js",
-    "dev": "cross-env NODE_ENV=development webpack serve --progress --open --host 0.0.0.0 --config webpack.dev.js",
+    "dev": "cross-env NODE_ENV=development webpack serve --progress --open --config webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --no-progress --config webpack.prod.js"
   },
   "dependencies": {
