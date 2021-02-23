@@ -32,6 +32,38 @@ function count(haystack:string, needle:string | Array<string>) : number {
 }
 
 /**
+ * 
+ * 
+ * @param {string} source
+ * @param {string} beginning
+ * 
+ * @return {string}
+ */
+function start(source:string, beginning:string) : string {
+  if (!source || source[0] === beginning) {
+    return source;
+  }
+
+  return beginning + source;
+}
+
+/**
+ * 
+ * 
+ * @param {string} source
+ * @param {string} ending
+ * 
+ * @return {string}
+ */
+function finish(source:string, ending:string) : string {
+  if (!source || source[source.length-1] === ending) {
+    return source;
+  }
+
+  return source + ending;
+}
+
+/**
  * Assumes the passed word param is a single word and converts it to a singular
  * form if it is not already singular.
  * 
@@ -209,4 +241,4 @@ function random(length:number = 16) : string {
  * Exports
 */
 
-export const Str = { count, singular, plural, lcfirst, ucfirst, matches, contains, limit, base64, random };
+export const Str = { count, start, finish, singular, plural, lcfirst, ucfirst, matches, contains, limit, base64, random };
