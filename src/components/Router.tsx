@@ -43,7 +43,6 @@ function HigherOrderRoute<RouteParams>({ component, ...options }:RouteOptions<Ro
  * Exported Components
 */
 
-
 export function Router(props:RouterProps) {
   /** Hooks **/
 
