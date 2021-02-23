@@ -2,7 +2,7 @@
  * Global Imports
 */
 
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 /**
  * Local Imports
@@ -33,7 +33,7 @@ export interface UserRouterProps {
  * Local Components
 */
 
-function ShowUserRouter(props:ShowUserRouterProps) : ReactNode {
+function ShowUserRouter(props:ShowUserRouterProps) {
   return (
     <Router
       routes={[
@@ -61,7 +61,7 @@ function ShowUserRouter(props:ShowUserRouterProps) : ReactNode {
  * Export Components
 */
 
-export function UserRouter(props:UserRouterProps) : ReactNode {
+export function UserRouter(props:UserRouterProps) {
   return (
     <Router
       container={ UserResourceIndexProvider }
