@@ -197,7 +197,6 @@ function limit(source:string, maxLength:number = 100, ending:string = '…') : s
     : source;
 }
 
-
 /**
  * Encode an array using base64.
  * 
