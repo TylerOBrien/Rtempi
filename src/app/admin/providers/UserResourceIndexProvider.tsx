@@ -33,7 +33,7 @@ export const UserResourceIndexContext = createContext<UserResourceIndexContextIn
  * Components
 */
 
-export function UserResourceIndexProvider(props:UserResourceIndexProviderProps) : ReactNode {
+export function UserResourceIndexProvider(props:UserResourceIndexProviderProps) {
   return (
     <ResourceIndexProvider<UserModel> context={ UserResourceIndexContext }>
       { props.children }
