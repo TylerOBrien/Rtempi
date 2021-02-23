@@ -22,8 +22,11 @@ module.exports = merge(common, {
     host: process.env.DEV_SERVER_HOST || '127.0.0.1',
     port: process.env.DEV_SERVER_PORT || 8080,
     compress: true,
-    disableHostCheck: true,
-    contentBase: './dist'
+    contentBase: './dist',
+    allowedHosts: [
+      process.env.ADMIN_DOMAIN,
+      process.env.USER_DOMAIN
+    ]
   },
 
   module: {
