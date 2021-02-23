@@ -137,7 +137,7 @@ export function condense<InTy=object, OutTy=InTy>(source:InTy, parent?:Array<str
  * 
  * @return {OutTy}
  */
-export function excepted<InTy=object, OutTy=InTy>(source:InTy, except:object | Array<string>):OutTy {
+export function except<InTy=object, OutTy=InTy>(source:InTy, except:object | Array<string>):OutTy {
   const clone = Object.assign({}, source as unknown as OutTy);
 
   if (Array.isArray(except)) {
@@ -160,4 +160,4 @@ export function excepted<InTy=object, OutTy=InTy>(source:InTy, except:object | A
  * Namespaced Exports
 */
 
-export const Algorithm = { truthies, pluck, expand, condense, excepted };
+export const Algorithm = { truthies, pluck, expand, condense, except };
