@@ -10,6 +10,35 @@
  * 
  * @return {string}
  */
+function count(haystack:string, needle:string | Array<string>) : number {
+  if (!needle.length) {
+    return 0;
+  } else if (typeof needle === 'string') {
+    needle = [ needle ];
+  }
+
+  let count = 0;
+
+  for (const item of needle) {
+    let index = haystack.indexOf(item);
+
+    while (index !== -1) {
+      count++;
+      index = haystack.indexOf(item, index + 1);
+    }
+  }
+
+  return count;
+}
+
+/**
+ * Assumes the passed word param is a single word and converts it to a singular
+ * form if it is not already singular.
+ * 
+ * @param {string} word
+ * 
+ * @return {string}
+ */
 function singular(word:string):string {
   const end = ( word.length - 1 );
 
@@ -180,4 +209,4 @@ function random(length:number = 16) : string {
  * Exports
 */
 
-export const Str = { singular, plural, lcfirst, ucfirst, matches, contains, limit, base64, random };
+export const Str = { count, singular, plural, lcfirst, ucfirst, matches, contains, limit, base64, random };
