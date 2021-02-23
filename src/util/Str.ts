@@ -40,7 +40,7 @@ function count(haystack:string, needle:string | Array<string>) : number {
  * @return {string}
  */
 function start(source:string, beginning:string) : string {
-  if (!source || source[0] === beginning) {
+  if (!source || source.indexOf(beginning) === 0) {
     return source;
   }
 
@@ -56,7 +56,7 @@ function start(source:string, beginning:string) : string {
  * @return {string}
  */
 function finish(source:string, ending:string) : string {
-  if (!source || source[source.length-1] === ending) {
+  if (!source || source.lastIndexOf(ending) === (source.length - ending.length)) {
     return source;
   }
 
