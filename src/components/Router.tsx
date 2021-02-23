@@ -53,7 +53,7 @@ export function Router<RouteParams>(props:RouterProps<RouteParams>) {
             <Route
               key={ index }
               component={ HigherOrderRoute.bind(this, route) }
-              path={ match.path + route.path ?? '' }
+              path={ match.path + (route.path ?? '') }
             />
           ))
         }
