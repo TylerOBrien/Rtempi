@@ -82,7 +82,7 @@ function contains(haystack:string, needle:string | Array<string>) : boolean {
   }
 
   for (const item of needle) {
-    if (haystack.indexOf(item) !== -1) {
+    if (haystack.indexOf(item) === -1) {
       return false;
     }
   }
