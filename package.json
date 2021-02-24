@@ -5,10 +5,8 @@
   "scripts": {
     "admin": "cross-env NODE_ENV=development APP_DOMAIN=admin webpack serve --progress --config webpack.dev.js",
     "user": "cross-env NODE_ENV=development APP_DOMAIN=user webpack serve --progress --config webpack.dev.js",
-
     "build:admin": "cross-env NODE_ENV=production APP_DOMAIN=admin webpack --config webpack.prod.js",
     "build:user": "cross-env NODE_ENV=production APP_DOMAIN=user webpack --config webpack.prod.js",
-
     "watch:admin": "cross-env NODE_ENV=development APP_DOMAIN=admin webpack watch --progress --config webpack.dev.js",
     "watch:user": "cross-env NODE_ENV=development APP_DOMAIN=user webpack watch --progress --config webpack.dev.js"
   },
