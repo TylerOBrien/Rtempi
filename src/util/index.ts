@@ -3,7 +3,7 @@
 */
 
 export { Api } from './Api';
-export { Algorithm } from './Algorithm';
+export { Arr } from './Arr';
 export { Functional } from './Functional';
 export { AsyncJSON } from './JSON';
 export { Str } from './Str';

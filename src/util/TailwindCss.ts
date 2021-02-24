@@ -2,7 +2,7 @@
  * Sibling Imports
 */
 
-import { Algorithm } from './Algorithm';
+import { Arr } from './Arr';
 
 /**
  * Types/Interfaces
@@ -88,7 +88,7 @@ function props(properties:TailwindProps) : StyleFromTailwindProps {
   }
 
   return Object.assign({}, properties, {
-    className: Algorithm.truthies<TailwindType>([ properties.className, properties.tailwind ]),
+    className: Arr.truthies<TailwindType>([ properties.className, properties.tailwind ]),
     tailwind: undefined
   });
 }

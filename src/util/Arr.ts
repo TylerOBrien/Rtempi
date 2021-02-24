@@ -1,5 +1,5 @@
 /**
- * Exports
+ * Functions
 */
 
 /**
@@ -14,7 +14,7 @@
  * 
  * @return {Array<Out>}
  */
-export function truthies<In=unknown, Out=In>(items:Array<In>):Array<Out> {
+function truthies<In=unknown, Out=In>(items:Array<In>):Array<Out> {
   const result:Array<Out> = [];
   const end = items.length;
 
@@ -33,7 +33,7 @@ export function truthies<In=unknown, Out=In>(items:Array<In>):Array<Out> {
 }
 
 /**
- * Namespaced Exports
+ * Exports
 */
 
-export const Algorithm = { truthies };
+export const Arr = { truthies };
