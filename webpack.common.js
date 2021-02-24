@@ -23,7 +23,7 @@ module.exports = {
   resolve: {
     extensions: ['.css', '.sass', '.scss', '.js', '.jsx', '.ts', '.tsx'],
     alias: {
-      '~': path.resolve(__dirname, './src'),
+      '~': path.resolve(__dirname, 'src')
     }
   }
 };

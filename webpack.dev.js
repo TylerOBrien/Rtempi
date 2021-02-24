@@ -22,7 +22,7 @@ module.exports = merge(common, {
     host: process.env.DEV_SERVER_HOST || '127.0.0.1',
     port: process.env.DEV_SERVER_PORT || 8080,
     compress: true,
-    contentBase: './dist',
+    contentBase: path.resolve(__dirname, 'dist'),
     allowedHosts: [
       process.env[process.env.APP_DOMAIN.toUpperCase() + '_DOMAIN']
     ]
@@ -63,7 +63,7 @@ module.exports = merge(common, {
       chunkFilename: '[name].css'
     }),
     new HtmlWebpackPlugin({
-      template: './staging/index.html',
+      template: path.resolve(__dirname, 'staging/index.html'),
       filename: 'index.html'
     })
   ]
