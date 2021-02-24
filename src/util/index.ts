@@ -10,3 +10,4 @@ export { Str } from './Str';
 export { Screen } from './Screen';
 export { Storage } from './Storage';
 export { Tailwind } from './TailwindCss';
+export { TokenStorage } from './Token';
