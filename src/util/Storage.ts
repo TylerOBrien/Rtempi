@@ -8,7 +8,7 @@ import { StorageConfig } from '~/config/Storage';
  * Sibling Imports
 */
 
-import { AsyncJSON } from './JSON';
+import { AsyncJSON, Serializable } from './JSON';
 
 /**
  * Types/Interfaces
@@ -50,11 +50,11 @@ function name(group:string, key:string):Promise<string> {
  * 
  * @param {string} group
  * @param {string} key
- * @param {object} unserialized
+ * @param {Serializable} unserialized
  * 
  * @return {PromisedStorageEntry}
  */
-function entry(group:string, key:string, unserialized:object) : PromisedStorageEntry {
+function entry(group:string, key:string, unserialized:Serializable) : PromisedStorageEntry {
   return new Promise((resolve, reject) => {
     const promises = [
       name(group, key),
