@@ -2,7 +2,7 @@
 
 ### Note
 
-Rtempi expects to be run as seperate instances on unique domains for each app
+Rtempi expects to be run as separate instances on unique domains for each app
 in the `src/app` directory. 
 
 ### Setup
