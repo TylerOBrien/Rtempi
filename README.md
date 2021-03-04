@@ -20,7 +20,7 @@ yarn user  # Start user dev server
 
 ```bash
 yarn watch:admin # Watch admin app for changes
-yarn watch:user  # Watch admin app for changes
+yarn watch:user  # Watch user app for changes
 ```
 
 ### Build for Release
